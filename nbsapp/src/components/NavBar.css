@@ -1,5 +1,15 @@
 header{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+    width: 100%;
+    grid-area: nav;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
+    margin-left: 50px;
+    width: 70%;
 }
