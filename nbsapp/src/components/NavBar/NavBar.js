@@ -1,18 +1,18 @@
 import './NavBar.css';
-import CartWidget from './CartWidget.js';
+import CartWidget from '../CartWidget/CartWidget.js';
 
-function Navbar() {
+function Navbar() { 
     return (
         <header>
             <div className='navbar'>
-                <a class="navbar-brand" href="#">NBS.Style</a>
-                <button type="button" class="btn btn-primary">
+                <a className="navbar-brand" href="#">NBS.Style</a>
+                <button type="button" className="btn btn-primary btnNav">
                     <a src="#"> Inicio</a>
                 </button>
-                <button type="button" class="btn btn-secondary">
+                <button type="button" className="btn btn-secondary btnNav">
                     <a src="#"> Quienes somos</a>
                 </button>
-                <button type="button" class="btn btn-success">
+                <button type="button" className="btn btn-success btnNav">
                     <a src="#"> Coleccion</a>
                 </button>
             </div>

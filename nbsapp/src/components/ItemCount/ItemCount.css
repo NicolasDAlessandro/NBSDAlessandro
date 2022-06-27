@@ -1,0 +1,21 @@
+.card-header{
+    text-align: center ;
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.botonAgregar{
+    margin-top: 15px;
+    margin-left: 40px;
+}
+.cantidad{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.aviso{
+    margin-top: 20px;
+}

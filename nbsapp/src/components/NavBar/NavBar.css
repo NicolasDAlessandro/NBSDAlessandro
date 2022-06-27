@@ -13,3 +13,9 @@ header{
     margin-left: 50px;
     width: 70%;
 }
+.btnNav{
+    width: 150px;
+}
+a{
+    font-size: 15px;
+}
