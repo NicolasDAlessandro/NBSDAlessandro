@@ -1,13 +1,6 @@
 div{
     grid-area: item;
 }
-.tarjeta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
 .titulo{
     text-align: center;
 }

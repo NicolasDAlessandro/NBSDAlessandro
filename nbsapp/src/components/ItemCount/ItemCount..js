@@ -1,6 +1,5 @@
 import './ItemCount.css'
 import { useState } from "react"
-import Swal from 'sweetalert2';
 
 
 function ItemCount({ stock,initial }){
@@ -19,24 +18,20 @@ function ItemCount({ stock,initial }){
         }
     }
     return(
-        <div className="card border-light mb-3 tarjeta" style={{width:300}}>
-            <div className="card-header">
-                <h4> Producto </h4>
-            </div>
-            <div className="card-body">
+            <div className='countCart'>
                 <div className='botones'>
-                    <button onClick={restar} className="btn btn-outline-primary">-</button>
+                    <button onClick={restar} className="btn btn-outline-danger">-</button>
                     <h4 className='cantidad'>{cantidad}</h4>
-                    <button onClick={sumar} className="btn btn-outline-primary">+</button>
+                    <button onClick={sumar} className="btn btn-outline-success">+</button>
                 </div>
-                <div className="aviso">
-                <h6> El stock maximo es de {stock} unidades </h6>
-                </div>
+                <button type="button" className="btn btn-outline-primary botonAgregar">
+                    <h6 className="card-title">Ver detalle</h6>
+                </button>
                 <button type="button" className="btn btn-outline-primary botonAgregar">
                     <h6 className="card-title">Agregar al carrito</h6>
                 </button>
             </div>
-        </div>
+
     )
 }
 

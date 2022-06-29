@@ -1,5 +1,8 @@
-.card-header{
-    text-align: center ;
+.countCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .botones{
     display: flex;
@@ -8,14 +11,14 @@
     margin-bottom: 10px;
 }
 .botonAgregar{
+    width: 200px;
     margin-top: 15px;
-    margin-left: 40px;
 }
 .cantidad{
-    margin-top: 10px;
+    margin-top: 6px;
     margin-left: 20px;
     margin-right: 20px;
 }
 .aviso{
-    margin-top: 20px;
+    margin-top: 8px;
 }

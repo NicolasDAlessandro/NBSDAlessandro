@@ -1,0 +1,17 @@
+.imagenes{
+    width: 200px;
+    height: 180px;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tarjeta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 340px;
+}
