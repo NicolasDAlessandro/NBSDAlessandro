@@ -1,0 +1,8 @@
+.popupCard{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-tracks: center !important;
+    align-items: center !important;
+    width: 600px ;
+    color: azure !important;
+}

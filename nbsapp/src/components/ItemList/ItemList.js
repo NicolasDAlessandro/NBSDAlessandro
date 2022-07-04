@@ -26,7 +26,7 @@ function ItemList(){
     return(
         <div className='prodContainer'>
             <div className='productCart'>
-                {info && info.map(i => <Item src={i.src} modelo={i.modelo} precio={i.precio} stock={5}/>)}
+                {info && info.map(i => <Item id={i.id} src={i.src} modelo={i.modelo} precio={i.precio} stock={5}/>)}
             </div>
         </div>
     )

@@ -1,7 +1,9 @@
 import ItemCount from '../ItemCount/ItemCount.'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import './Item.css'
 
-function Item({ modelo,src,precio}){
+function Item({ id,modelo,src,precio}){
+    
     return (
         <div className="card border-light mb-3 tarjeta">
             <div className="card-header">
@@ -11,9 +13,10 @@ function Item({ modelo,src,precio}){
                 <img src={src} alt={modelo} className="imagenes"/>
                 <h6> ${precio} </h6>
                 <ItemCount stock={5} initial={1}/>
+                <ItemDetailContainer id={id}/> 
             </div>
         </div>
     )
 }
 export default Item
-        //<></>    
+        //<></>     <ItemDetailContainer id={id}/> 
