@@ -1,15 +1,17 @@
 import { useEffect,useState } from "react"
+import { useParams } from "react-router-dom"
 import {productos} from '../../productos'
 import ItemDetail  from "../ItemDetail/ItemDetail"
 
-function ItemDetailContainer({id}){
+function ItemDetailContainer(){
     
+    let params = useParams()
     const [prod,setProd] = useState([])
     
     useEffect(() => {
           const getProd = new Promise ((resolve) =>{
             setTimeout(() => {
-               const myData = productos.find(prod => prod.id === id);
+               const myData = productos.find(prod => prod.id === params.id);
                resolve(myData)
             }, 2000);
           })
@@ -20,7 +22,7 @@ function ItemDetailContainer({id}){
 
     return(
         <div>
-            {prod !== undefined && <ItemDetail id={prod.id} modelo={prod.modelo} src={prod.src} precio={prod.precio}/> }
+            {prod !== undefined && prod.map(i => <ItemDetail id={i.id} src={i.src} modelo={i.modelo} precio={i.precio} />)}
         </div>
     )
 }
@@ -28,5 +30,5 @@ function ItemDetailContainer({id}){
 export default ItemDetailContainer
 
 /*
-{j !== undefined && <ItemDetail id={prod.id} modelo={prod.modelo} /> }
+{ prod !== undefined && <ItemDetail props={prod} /> }
 */

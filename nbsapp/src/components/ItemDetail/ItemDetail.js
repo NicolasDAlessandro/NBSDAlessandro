@@ -1,27 +1,46 @@
-import Swal from "sweetalert2"
+import { useEffect,useState } from 'react'
+import { NavLink, useParams } from 'react-router-dom'
+import {productos} from '../../productos'
 import './ItemDetail.css'
 
-function ItemDetail({ id,modelo, src, precio }){
-    function showDetail(){
-        return Swal.fire({
-            customClass:{
-                popup:"popupCard"
-            },
-            title:`${modelo}`,
-            text: `$ ${precio}`,
-            imageUrl:`${src}`,
-            imageHeight: 400,
-            imageWidth: 400,
-            imageAlt: `${modelo}`,
-            background: '#6f42c1',
-          
+function ItemDetail(){
+   
+    let params = useParams()
+    const [prod,setProd] = useState([])
+    
+    
+    const getProd = new Promise ((resolve) =>{
+        setTimeout(() => {
+            const myData = productos.find(prod => prod.id === parseInt(params.id));
+            resolve(myData)
+
+        }, );
+    })
+        
+    useEffect(() => {
+    getProd.then((res)=>{
+        setProd(res)
         })
-    } 
+    },)
+
     return (
-        <div>
-            <button type="button" onClick={showDetail}  className="btn btn-outline-primary botonAgregar">
-                <h6 className="card-title">Ver detalle</h6>
-            </button>
+        <div className="`card border-light detailCard " >
+            {prod !== undefined && 
+            <div> 
+                <div className='detailModel'> 
+                    <h1> {prod.modelo}</h1>
+                </div>    
+                <div className="detailCard ">              
+                    <img src={`../${prod.src}`} alt={prod.modelo} className="imageDetail" />
+                    <div className='detailInfo'> 
+                        <h3>Precio: $ {prod.precio}</h3>
+                        <button type="button" className="btn btn-success btnNav">
+                            <NavLink to={`/category/${prod.categoria}`} className="linkRemeras"> {prod.categoria}</NavLink>
+                        </button>
+                    </div> 
+                </div> 
+            </div>
+            }
         </div>
         )
 }

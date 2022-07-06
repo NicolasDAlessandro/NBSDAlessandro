@@ -35,9 +35,3 @@ function ItemList(){
 
 export default ItemList
 
-/*
-useEffect(() => {
-    fetch('productos.json')
-    .then((res) => res.json())
-    .then(data => setInfo(data));
-}, [])*/

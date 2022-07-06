@@ -1,6 +1,7 @@
 .imagenes{
     width: 200px;
     height: 180px;
+    margin-bottom: 10px;
 }
 .card-body{
     display: flex;
