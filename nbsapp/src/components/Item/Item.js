@@ -1,4 +1,4 @@
-import ItemCount from '../ItemCount/ItemCount.'
+
 import { Link } from 'react-router-dom'
 import './Item.css'
 
@@ -11,7 +11,6 @@ function Item({ id,modelo,src}){
             </div>
             <div className="card-body">
                 <img src={src} alt={modelo} className="imagenes"/>
-                <ItemCount stock={5} initial={1}/>
                 <button type="button" className="btn btn-outline-primary botonAgregar">
                 <Link to={`/item/${id}`}  className="card-title linkRemeras">Ver detalle</Link >
                 </button>

@@ -1,19 +1,19 @@
 import { useEffect,useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { Link, NavLink, useParams } from 'react-router-dom'
 import {productos} from '../../productos'
 import './ItemDetail.css'
+import ItemCount from "../ItemCount/ItemCount."
 
 function ItemDetail(){
    
     let params = useParams()
     const [prod,setProd] = useState([])
-    
+    const [itemCountState, setItemCountState] = useState(true)
     
     const getProd = new Promise ((resolve) =>{
         setTimeout(() => {
             const myData = productos.find(prod => prod.id === parseInt(params.id));
             resolve(myData)
-
         }, );
     })
         
@@ -22,6 +22,12 @@ function ItemDetail(){
         setProd(res)
         })
     },)
+
+    const onAdd = (data) => {
+        const cantidad = data
+        const total = cantidad * prod.precio
+        setItemCountState(false)
+    }
 
     return (
         <div className="`card border-light detailCard " >
@@ -36,6 +42,11 @@ function ItemDetail(){
                         <h3>Precio: $ {prod.precio}</h3>
                         <button type="button" className="btn btn-success btnNav">
                             <NavLink to={`/category/${prod.categoria}`} className="linkRemeras"> {prod.categoria}</NavLink>
+                        </button>
+                        {itemCountState === true ? <ItemCount onSaveData={onAdd} stock={5} initial={1}/> :
+                        <h4> Producto Agregado! </h4> } 
+                        <button type="button" className="btn btn-outline-primary botonAgregar">
+                            <Link to={'/cart'} className="linkRemeras"><h6 className="card-title ">Finalizar compra</h6></Link>
                         </button>
                     </div> 
                 </div> 

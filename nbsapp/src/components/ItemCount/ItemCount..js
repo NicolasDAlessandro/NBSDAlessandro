@@ -2,12 +2,10 @@ import './ItemCount.css'
 import { useState } from "react"
 import Swal from 'sweetalert2';
 
+function ItemCount({ onSaveData,stock,initial }){
 
-
-function ItemCount({ stock,initial }){
     const [cantidad, setCantidad] = useState(initial);
-
-
+ 
 
     const sumar = () =>{
         if(cantidad < stock){
@@ -23,22 +21,27 @@ function ItemCount({ stock,initial }){
         }
     }
     const restar = () => {
-        if(cantidad > 0){
+        if(cantidad > 1){
         setCantidad(cantidad - 1)
         }
     }
     
+    const submitHandler = (event) => {
+        event.preventDefault()
+        const data = cantidad
+        onSaveData(data)
+    }
 
     return(
-            <div className='countCart'>
+            <div  className='countCart'>
                 <div className='botones'>
                     <button onClick={restar} className="btn btn-outline-danger">-</button>
                     <h4 className='cantidad'>{cantidad}</h4>
                     <button onClick={sumar} className="btn btn-outline-success">+</button>
                 </div>
 
-                <button type="button" className="btn btn-outline-primary botonAgregar">
-                    <h6 className="card-title">Agregar al carrito</h6>
+                <button type="submit" onClick={submitHandler} className="btn btn-outline-primary botonAgregar">
+                    Agregar al carrito
                 </button>
             </div>
 
