@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <header>
             <div className='navbar'>
-                <NavLink className="navbar-brand" to={'/'}><h2>NBS.Style</h2></NavLink>
+                <NavLink className="navbar-brand linkRemeras" to={'/'}><h1>NBS.Style</h1></NavLink>
                 <button type="button" className="btn btn-primary btnNav">
                     <NavLink to={'/'} className="linkRemeras"> Inicio</NavLink>
                 </button>

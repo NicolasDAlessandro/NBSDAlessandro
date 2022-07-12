@@ -9,6 +9,7 @@ function ItemDetail(){
     let params = useParams()
     const [prod,setProd] = useState([])
     const [itemCountState, setItemCountState] = useState(true)
+    const [quantity, setQuantity] = useState(0)
     
     const getProd = new Promise ((resolve) =>{
         setTimeout(() => {
@@ -24,11 +25,10 @@ function ItemDetail(){
     },)
 
     const onAdd = (data) => {
-        const cantidad = data
-        const total = cantidad * prod.precio
+        setQuantity(data)
         setItemCountState(false)
     }
-
+    
     return (
         <div className="`card border-light detailCard " >
             {prod !== undefined && 

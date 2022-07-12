@@ -50,6 +50,3 @@ function ItemCount({ onSaveData,stock,initial }){
 
 export default ItemCount
 
-/*                 <button type="button" className="btn btn-outline-primary botonAviso botonAgregar">
-                    <h6 className="card-title">Ver detalle</h6>
-                </button>*/
