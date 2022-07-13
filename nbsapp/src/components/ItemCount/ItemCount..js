@@ -28,8 +28,8 @@ function ItemCount({ onSaveData,stock,initial }){
     
     const submitHandler = (event) => {
         event.preventDefault()
-        const data = cantidad
-        onSaveData(data)
+        const quantity = cantidad
+        onSaveData(quantity)
     }
 
     return(
@@ -39,7 +39,6 @@ function ItemCount({ onSaveData,stock,initial }){
                     <h4 className='cantidad'>{cantidad}</h4>
                     <button onClick={sumar} className="btn btn-outline-success">+</button>
                 </div>
-
                 <button type="submit" onClick={submitHandler} className="btn btn-outline-primary botonAgregar">
                     Agregar al carrito
                 </button>

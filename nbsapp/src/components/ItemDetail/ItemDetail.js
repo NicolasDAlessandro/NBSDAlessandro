@@ -3,13 +3,15 @@ import { Link, NavLink, useParams } from 'react-router-dom'
 import {productos} from '../../productos'
 import './ItemDetail.css'
 import ItemCount from "../ItemCount/ItemCount."
+import { UseCart } from '../../store/CartContext'
 
 function ItemDetail(){
    
-    let params = useParams()
-    const [prod,setProd] = useState([])
-    const [itemCountState, setItemCountState] = useState(true)
-    const [quantity, setQuantity] = useState(0)
+    let params = useParams();
+    const context = UseCart();
+    const [prod,setProd] = useState([]);
+    const [itemCountState, setItemCountState] = useState(true);
+    
     
     const getProd = new Promise ((resolve) =>{
         setTimeout(() => {
@@ -24,9 +26,13 @@ function ItemDetail(){
         })
     },)
 
-    const onAdd = (data) => {
-        setQuantity(data)
+    const onAdd = (quantity) => {
+        context.addItem(prod,quantity)
         setItemCountState(false)
+    }
+
+    const removeProd = () => {
+         context.removeItem(params.id)
     }
     
     return (
@@ -43,10 +49,13 @@ function ItemDetail(){
                         <button type="button" className="btn btn-success btnNav">
                             <NavLink to={`/category/${prod.categoria}`} className="linkRemeras"> {prod.categoria}</NavLink>
                         </button>
-                        {itemCountState === true ? <ItemCount onSaveData={onAdd} stock={5} initial={1}/> :
+                        {itemCountState === true ? <ItemCount onSaveData={onAdd} stock={prod.stock} initial={1}/> :
                         <h4> Producto Agregado! </h4> } 
                         <button type="button" className="btn btn-outline-primary botonAgregar">
                             <Link to={'/cart'} className="linkRemeras"><h6 className="card-title ">Finalizar compra</h6></Link>
+                        </button>
+                        <button type="button" onClick={removeProd} className="btn btn-outline-primary botonAgregar">
+                            remove item
                         </button>
                     </div> 
                 </div> 
