@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { UseCart } from "../../store/CartContext"
 
 
 
@@ -11,7 +12,7 @@ function CategoryItem({ id,src,modelo } ){
             </div>
             <div className="card-body">
                 <img src={`../${src}`} alt={modelo} className="imagenes"/>
-                <button type="button" className="btn btn-outline-primary botonAgregar">
+                <button type="button"  className="btn btn-outline-primary botonAgregar">
                 <Link to={`/item/${id}`}  className="card-title linkRemeras">Ver detalle</Link >
                 </button>
             </div>

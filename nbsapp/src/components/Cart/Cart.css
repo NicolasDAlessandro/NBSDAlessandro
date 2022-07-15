@@ -1,0 +1,12 @@
+.cartMessage{
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    margin-top: 70px;
+}
+.btnCart{
+    margin-top: 30px;
+}
+.finalPrice{
+    text-align: center;
+}

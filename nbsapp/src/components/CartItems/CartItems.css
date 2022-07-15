@@ -1,0 +1,21 @@
+.itemLayout{
+    height: 180px;
+    width: 100%;
+    margin-left: 100px;
+    margin-top: 60px;
+}
+.itemProps{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cartImg{
+    width: 100px;
+    height: 100px;
+}
+.removeButton{
+    width: 100px;
+    height: 40px;
+}

@@ -50,13 +50,9 @@ function ItemDetail(){
                             <NavLink to={`/category/${prod.categoria}`} className="linkRemeras"> {prod.categoria}</NavLink>
                         </button>
                         {itemCountState === true ? <ItemCount onSaveData={onAdd} stock={prod.stock} initial={1}/> :
-                        <h4> Producto Agregado! </h4> } 
                         <button type="button" className="btn btn-outline-primary botonAgregar">
                             <Link to={'/cart'} className="linkRemeras"><h6 className="card-title ">Finalizar compra</h6></Link>
-                        </button>
-                        <button type="button" onClick={removeProd} className="btn btn-outline-primary botonAgregar">
-                            remove item
-                        </button>
+                        </button> } 
                     </div> 
                 </div> 
             </div>

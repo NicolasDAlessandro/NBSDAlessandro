@@ -1,7 +1,7 @@
 header{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 150px;
     width: 100%;
     grid-area: nav;
@@ -9,9 +9,10 @@ header{
 .navbar{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-left: 50px;
     width: 70%;
+    position: static;
 }
 .btnNav{
     width: 150px;

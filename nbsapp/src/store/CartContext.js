@@ -1,4 +1,4 @@
-import { createContext, useState,useContext} from 'react' ;
+import { createContext, useState,useContext } from 'react' ;
 import Swal from 'sweetalert2';
 
 
@@ -10,6 +10,8 @@ export const UseCart = () => useContext(CartContext)
 export const CartContextProvider = ({ defaultValue = [] ,children}) => {
 
     const [cart, setCart] = useState(defaultValue);
+    const [total, setTotal] = useState(0)
+    const [onCartCount,setOnCartCount] = useState(0)
 
     const isInCart = (id) => {
         return cart.find((prod) => prod.producto.id === id)
@@ -33,9 +35,9 @@ export const CartContextProvider = ({ defaultValue = [] ,children}) => {
                    }
                 }
             }
-            setCart(onCart)
+            setCart(onCart)   
         }else{
-            setCart([...cart,  { producto: producto, quantity: quantity } ])
+            setCart([...cart,  { producto: producto, quantity: quantity } ])    
         }
     };
     
@@ -48,12 +50,30 @@ export const CartContextProvider = ({ defaultValue = [] ,children}) => {
         setCart(defaultValue)
     }
 
+    const calcularTotal = () => {
+        if(cart.length !== 0 ){
+            let totalResult = 0
+            cart.forEach((p) => {
+                p.quantity !== 0 ? totalResult += p.producto.precio * p.quantity : totalResult += p.producto.precio
+            })
+            setTotal(totalResult)
+        }
+    }
+
+    const onCartItems = () => {
+        if(cart.length !== 0 ){
+            let totalResult = 0
+            cart.forEach((p) => {
+                totalResult += p.quantity
+            })
+            setOnCartCount(totalResult)
+        }
+    }
+    
+
     return(
-        <CartContext.Provider value={{ cart,addItem,removeItem,clear }}>
+        <CartContext.Provider value={{ total,cart,onCartCount,addItem,removeItem,clear,calcularTotal,onCartItems }}>
             {children}
         </CartContext.Provider>
     )
-
 }
-
-// productos.quantity = productos.quantity + quantity
