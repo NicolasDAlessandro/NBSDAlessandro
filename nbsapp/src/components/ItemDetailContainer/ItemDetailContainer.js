@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
-import {productos} from '../../productos'
 import ItemDetail  from "../ItemDetail/ItemDetail"
+import { getFirestore,collection, getDocs } from 'firebase/firestore'
 
 function ItemDetailContainer(){
     
@@ -9,16 +9,15 @@ function ItemDetailContainer(){
     const [prod,setProd] = useState([])
     
     useEffect(() => {
-          const getProd = new Promise ((resolve) =>{
-            setTimeout(() => {
-               const myData = productos.find(prod => prod.id === params.id);
-               resolve(myData)
-            }, 2000);
-          })
-          getProd.then((res)=>{
-            setProd(res)
+        const db = getFirestore()
+        const itemsRef = collection(db, "items")
+        getDocs(itemsRef).then((snapshot) => {
+            setProd( snapshot.docs.filter((doc) => doc.data().id === params.id)) 
         })
-    },)
+
+    }, [])
+
+    console.log(prod)
 
     return(
         <div>

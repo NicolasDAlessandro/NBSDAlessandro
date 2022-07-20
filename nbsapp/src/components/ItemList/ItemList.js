@@ -1,32 +1,25 @@
 import './ItemList.css'
 import Item from '../Item/Item'
 import { useEffect, useState } from 'react'
-import {productos} from '../../productos'
-
+import { getFirestore,collection, getDocs } from 'firebase/firestore'
 function ItemList(){
     
     const [info, setInfo] = useState([])
 
-    const getInfo = () => {
-        return new Promise((resolve,reject) => {
-        setTimeout(() => {
-            productos.length > 0 ? 
-            resolve(productos)
-            :
-            reject("No data")
-        }, 2000);
-    } )}
-
     useEffect(() => {
-          getInfo()
-          .then(res => setInfo(res)) 
-          .catch(err => console.log(err))
-    } ,)
+        const db = getFirestore()
+        const itemsRef = collection(db, "items")
+        getDocs(itemsRef).then((snapshot) => {
+            setInfo( snapshot.docs.map((doc) => doc.data())) 
+        })
+
+    }, [])
+    
     
     return(
         <div className='prodContainer'>
             <div className='productCart'>
-                {info && info.map(i => <Item id={i.id} src={i.src} modelo={i.modelo} precio={i.precio} stock={5}/>)}
+                {info && info.map(i => <Item props={i} key={i.id}/>)}
             </div>
         </div>
     )
