@@ -10,3 +10,39 @@
 .finalPrice{
     text-align: center;
 }
+.shopDiv{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.shopButton{
+    height: 50px;
+}
+.formContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formStyle{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.formLaber{
+    text-align: center;
+}
+.buttonDiv{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
