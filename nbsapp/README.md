@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Documentacion 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Lo primero que se debe hacer para poder acceder al proyecto es descargarlo, para eso, abrimos la consola de comandos, nos posicionamos en la carpeta donde queremos guardar el proyecto y luego ejecutamos los siguientes comandos :
 
-## Available Scripts
+ 1. cd NombreDeCarpetaDeseada
+	 Para posicionarse donde queramos guardar el proyecto.
+ 
+ 2. git clone https://github.com/NicolasDAlessandro/NBSDAlessandro.git
+	 Para obtener el proyecto. 
+ 
+ 3. npm install 
+	 Para instalar el proyecto.
+	 
+ 4. npm run start 
+	 Para poder ejecutar el proyecto.
 
-In the project directory, you can run:
+## A tener en cuenta	
 
-### `npm start`
+El proyecto fue realizado con la libreria [React](https://es.reactjs.org/) de JavaScript, su contenido esta organizado en componentes (dentro de la carpeta src) los cuales le dan distintas funcionalidades a la aplicacion, tales como :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - Consultar a la base de datos de [Firebase](https://firebase.google.com/) la informacion de los productos guardados, y crear un catalogo donde se puedan visualizar los productos.
+ - Filtrar los productos segun su categoria .
+ - Mostrar los detalles del producto como su precio y la posibilidad de poder agregarlos a un carrito de compra, que tiene en cuenta el stock propio de cada producto.
+ - Crear un cart widget, el cual notifica al usuario la cantidad de productos que tiene agregados, y en caso de darle click, lo direccionara al carrito.
+ - Dentro del carrito podemos ver la cantidad de productos agregados, su cantidad, su precio individual, y el gasto total de la compra.
+ - En caso de querer finalizar la compra, se desplegara un formulario que le pide al usuario un nombre, un email y un telefono.  Una vez completado el formulario se genera una orden la cual se guarda en la base de datos, con la informacion del cliente y de la compra. Se le otorga un id de compra al usuario y finalmente se actualiza el stock de los productos comprados.
+ 
+ ## Para terminar
+El proyecto tambien usa librerias y frameworks como 
+ 
+ - [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start) para facilitar la navegacion entre componentes.
+ - [SweetAlert2](https://sweetalert2.github.io/) para darle mensajes al usuario de una forma mas prolija. 
+ - [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) y [Bootswatch](https://bootswatch.com/vapor/) para darle estilos a la aplicacion. 
+	 

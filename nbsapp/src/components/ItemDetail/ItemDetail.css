@@ -6,6 +6,10 @@
     align-items: center;
     text-align: center;
 }
+.mainDetail{
+    width: 900px;
+    margin-bottom: 50px;
+}
 .detailModel{
     text-align: center;
     margin-top: 12px;
@@ -27,4 +31,5 @@
 .imageDetail{
     width: 380px;
     height: 400px;
+    margin-bottom: 30px;
 }

@@ -10,6 +10,10 @@
 .finalPrice{
     text-align: center;
 }
+.cartContent{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
 .shopDiv{
     height: 200px;
     display: flex;
@@ -45,4 +49,5 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    margin-bottom: 30px;
 }

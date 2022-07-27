@@ -26,7 +26,7 @@ function Cart(){
     return(
         <div>
             {contexto.cart.length > 0 ? 
-            <div>
+            <div className='cartContent'>
                 <h3 className='finalPrice'>Total de la compra : ${contexto.total}</h3>
             </div>: <></>}
             {contexto.cart.length > 0 ? 

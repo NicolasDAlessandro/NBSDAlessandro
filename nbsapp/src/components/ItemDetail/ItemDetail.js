@@ -28,9 +28,9 @@ function ItemDetail(){
     }
  
     return (
-        <div className="`card border-light detailCard " >
+        <div className="detailCard " >
             {prod !== undefined && prod.map((p) => 
-            <div key={p.id}> 
+            <div key={p.id} className='card border-light mainDetail'> 
                 <div className='detailModel'> 
                     <h1> {p.modelo}</h1>
                 </div>    
@@ -39,7 +39,7 @@ function ItemDetail(){
                     <div className='detailInfo'> 
                         <h3>Precio: $ {p.precio}</h3>
                         <button type="button" className="btn btn-success btnNav">
-                            <NavLink to={`/category/${p.categoria}`} className="linkRemeras"> {p.categoria}</NavLink>
+                            <NavLink to={`/category/${p.categoria}`} className="linkRemeras"> {p.categoria.toUpperCase()}</NavLink>
                         </button>
                         {itemCountState === true ? <ItemCount onSaveData={onAdd} stock={p.stock} initial={1}/> :
                         <button type="button" className="btn btn-outline-primary botonAgregar">
